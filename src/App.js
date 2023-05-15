@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import StudentForm from "./components/create";
+import Read from "./components/read";
+import Update from "./components/update";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { Button } from "semantic-ui-react";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <h2>REACT CRUD Student Record</h2>
+        <nav>
+          <Link to="/read">
+            <Button>READ</Button>
+          </Link>
+          <Link to="/create">
+            <Button>CREATE</Button>
+          </Link>
+        </nav>
+        <div style={{ marginTop: 20 }}>
+          <Routes>
+            <Route path="/create" element={<StudentForm />} />
+            <Route path="/read" element={<Read />} />
+            <Route path="/update" element={<Update />} />
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
