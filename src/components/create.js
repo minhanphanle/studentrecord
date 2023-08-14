@@ -22,30 +22,42 @@ const StudentForm = () => {
   return (
     <div>
       <Form className="create-form">
-        <Form.Field>
-          <label>Student ID</label>
+        <Form.Field className="grid-item">
+          <label style={{ marginTop: "2px" }}>Student ID</label>
           <input
             placeholder="Student's ID"
             onChange={(e) => setStudentID(e.target.value)}
           />
         </Form.Field>
-        <Form.Field>
-          <label>Student Name</label>
+        <Form.Field className="grid-item">
+          <label style={{ marginTop: "2px" }}>Student Name</label>
           <input
             placeholder="Student's Name"
             onChange={(e) => setStudentName(e.target.value)}
           />
         </Form.Field>
-        <Form.Field>
-          <label>Student's Grade</label>
+        <Form.Field className="grid-item">
+          <label style={{ marginTop: "2px" }}>Student's Grade</label>
           <input
             placeholder="Student's Grade"
             onChange={(e) => setStudentGrade(e.target.value)}
           />
         </Form.Field>
-        <Button onClick={postData} type="submit">
-          Submit
-        </Button>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Button
+            onClick={postData}
+            type="submit"
+            style={{ marginTop: "10px" }}
+          >
+            Submit
+          </Button>
+        </div>
       </Form>
     </div>
   );

@@ -9,9 +9,18 @@
 }
 
 .create-form label {
+  display: grid;
+  grid-template-columns: 100px 80px;
   color: whitesmoke !important;
   font-family: "Montserrat", sans-serif;
   font-size: 12px !important;
+}
+
+.grid-item {
+  text-align: left;
+  display: grid;
+  grid-template-columns: 110px 120px;
+  margin-top: 5px;
 }
 
 .App-logo {
